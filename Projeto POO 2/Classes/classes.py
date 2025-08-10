@@ -36,13 +36,13 @@ class Vendedor(Pessoa):
             'tipo': 'Vendedor',
             'nome': self.nome,
             'email': self.email,
-            'telefone': self.telefone
+            'salario': self.salario
         }
 
     @staticmethod
     def from_dict(dados):
         #Cria um objeto Vendedor a partir de um dicionário.
-        return Vendedor(dados['nome'], dados['email'], dados['telefone'])
+        return Vendedor(dados['nome'], dados['email'], dados['salario'])
 
 # Classe Artista
 class Artista:
@@ -107,4 +107,5 @@ class Pedido:
         
     # Calcula o valor total do pedio somando os subtotais dos itens
     def total(self):
+
         return sum(item.subtotal() for item in self.itens)
